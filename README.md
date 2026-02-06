@@ -2,9 +2,6 @@
 
 A Windows 11 system monitoring tool written in C++ for defensive endpoint visibility. This prototype collects and summarizes real-time system metrics such as CPU usage, RAM usage, disk space, and system uptime, and (optionally) retrieves recent Windows Event Log entries. The project uses C++ `struct` best practices to model system data cleanly and prepares the codebase for modular expansion.
 
-## Description (GitHub About)
-C++ Windows 11 system resource and event monitor that tracks CPU, memory, disk, uptime, and (optionally) recent Windows Event Log entries for defensive endpoint monitoring.
-
 ## Features
 - CPU usage monitoring (Windows API: `GetSystemTimes`)
 - Memory usage monitoring (Windows API: `GlobalMemoryStatusEx`)
@@ -20,20 +17,6 @@ C++ Windows 11 system resource and event monitor that tracks CPU, memory, disk, 
 - Compiler: MSVC (Visual Studio) / MinGW g++ / Clang on Windows
 - APIs: Win32 / Windows API, Windows Event Log API
 
-
-## Struct Design (Example)
-This project uses C++ `struct`s to encapsulate collected data:
-
-- `CpuMetrics`
-  - Holds CPU usage values derived from `GetSystemTimes`
-- `MemoryMetrics`
-  - Holds RAM totals/available/usage from `GlobalMemoryStatusEx`
-- `DiskMetrics`
-  - Holds free/total disk space from `GetDiskFreeSpaceEx`
-- `EventMetadata` (optional)
-  - Holds event ID, provider/source, level/category, timestamp, and message summary
-
-Each struct is initialized safely, populated via API calls, and printed as a summarized report.
 
 ## How It Works
 1. Collect CPU, memory, disk, and uptime metrics using Win32 API calls.
